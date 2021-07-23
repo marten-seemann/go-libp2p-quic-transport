@@ -154,7 +154,7 @@ func testSingleFileTransfer(tr transport.Transport, serverKey crypto.PubKey, add
 	defer cancel()
 	c, err := tr.Dial(ctx, addr, serverPeerID)
 	if err != nil {
-		return fmt.Errorf("Dial failed: %w", err)
+		return fmt.Errorf("dial failed: %w", err)
 	}
 	defer c.Close()
 	if !c.RemotePublicKey().Equals(serverKey) {
@@ -195,7 +195,7 @@ func testMultipleFileTransfer(tr transport.Transport, serverKey crypto.PubKey, a
 	defer cancel()
 	c, err := tr.Dial(ctx, addr, serverPeerID)
 	if err != nil {
-		return fmt.Errorf("Dial failed: %w", err)
+		return fmt.Errorf("dial failed: %w", err)
 	}
 	defer c.Close()
 	if !c.RemotePublicKey().Equals(serverKey) {
